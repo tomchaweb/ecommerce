@@ -35,7 +35,11 @@ const router = createBrowserRouter(
       </Route>
 
       <Route path="wishlist" element={<Wishlist />}></Route>
-      <Route path="profile" element={<Profile />}></Route>
+      <Route path="profile" element={<Profile />}>
+        <Route path="account"></Route>
+        <Route path="orders"></Route>
+        <Route path="settings"></Route>
+      </Route>
 
       <Route path="checkout" element={<Checkout />}></Route>
 

@@ -1,3 +1,10 @@
+import ScrollToTop from "../components/ScrollToTop";
+
 export default function Profile() {
-  return <div className="profile">Profile</div>;
+  return (
+    <>
+      <ScrollToTop />
+      <div className="profile">Profile</div>
+    </>
+  );
 }
