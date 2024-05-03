@@ -699,7 +699,7 @@ a{
   width: 31rem;
   height: 31rem;
   background-color: #F3F3F3;
-  cursor: pointer;
+  cursor: zoom-in;
 }
 
 .product-text {
@@ -780,6 +780,7 @@ a{
 .add-to-wishlist-btn {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   gap: 1rem;
   width: fit-content;
   padding: 0.3rem;
@@ -788,6 +789,19 @@ a{
   margin-bottom: 1rem;
   background-color: transparent;
   transition: all 0.2s;
+}
+
+.add-to-wishlist-btn-img-container{
+  padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0d9ef;
+  border-radius: 50%;
+}
+
+.add-to-wishlist-btn svg{
+  color: #735DA5;
 }
 
 .add-to-wishlist-btn:hover {
@@ -898,8 +912,47 @@ a{
 .profile{
   padding: 5rem 7rem;
   margin-top: 7rem;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
 }
+
+.profile h2{
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.profile-page footer{
+  margin-top: 0;
+}
+
+.profile-sidebar{
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  border-right: 1px solid #e3e3e3;
+}
+
+.profile-sidebar ul{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profile-sidebar a:hover{
+  text-decoration: underline;
+}
+
+.profile-account{
+  padding: 2rem;
+}
+
+.profile-orders{
+  padding: 2rem;
+}
+
+.profile-settings{
+  padding: 2rem;
+}
+
 
 /* WISHLIST PAGE */
 /* //////////////// */
@@ -969,10 +1022,6 @@ a{
 .remove-from-wishlist-btn{
   background-color: transparent;
   border: none;
-}
-
-.remove-from-wishlist-btn:hover{
-  animation: pulse 0.5s ease infinite;
 }
 
 .wishlist-card-main img{

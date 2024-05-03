@@ -178,12 +178,16 @@ export default function ProductPage() {
               </div>
               {!isLiked ? (
                 <button className="add-to-wishlist-btn" onClick={addToWishlist}>
-                  <HeartIcon size={16} color={"currentColor"} />
+                  <div className="add-to-wishlist-btn-img-container">
+                    <HeartIcon size={16} color={"currentColor"} />
+                  </div>
                   Add to wishlist
                 </button>
               ) : (
                 <button className="add-to-wishlist-btn">
-                  <HeartFillIcon size={16} color={"currentColor"} />
+                  <div className="add-to-wishlist-btn-img-container">
+                    <HeartFillIcon size={16} color={"currentColor"} />
+                  </div>
                   In Wishlist
                 </button>
               )}

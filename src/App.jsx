@@ -15,10 +15,13 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import Wishlist from "./pages/Wishlist";
 import Profile from "./pages/Profile";
+import ProfileAccount from "./pages/ProfileAccount";
+import ProfileOrders from "./pages/ProfileOrders";
+import ProfileSettings from "./pages/ProfileSettings";
+import Checkout from "./pages/Checkout";
 import PageNotFound from "./pages/PageNotFound";
 
 import Header from "./components/Header";
-import Checkout from "./pages/Checkout";
 
 export const CartContext = createContext();
 export const WishlistContext = createContext();
@@ -36,9 +39,9 @@ const router = createBrowserRouter(
 
       <Route path="wishlist" element={<Wishlist />}></Route>
       <Route path="profile" element={<Profile />}>
-        <Route path="account"></Route>
-        <Route path="orders"></Route>
-        <Route path="settings"></Route>
+        <Route path="account" element={<ProfileAccount />}></Route>
+        <Route path="orders" element={<ProfileOrders />}></Route>
+        <Route path="settings" element={<ProfileSettings />}></Route>
       </Route>
 
       <Route path="checkout" element={<Checkout />}></Route>
