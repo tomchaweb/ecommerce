@@ -937,6 +937,12 @@ a{
   gap: 2rem;
 }
 
+.profile-sidebar a{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .profile-sidebar a:hover{
   text-decoration: underline;
 }
