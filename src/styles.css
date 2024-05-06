@@ -1113,6 +1113,38 @@ a{
 .checkout{
   padding: 5rem 7rem;
   margin-top: 7rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.checkout-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.checkout-item-card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.checkout-item-card img{
+  height: 5rem;
+}
+
+.checkout-item-left{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkout-item-right{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* FOOTER */

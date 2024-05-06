@@ -42,7 +42,7 @@ export default function Header() {
           <NavLink to="/">
             <h1>Modal</h1>
           </NavLink>
-          <NavLink to="/about">About</NavLink>
+          <NavLink to="/about">About Us</NavLink>
           <NavLink to="/products">Products</NavLink>
         </div>
         <ul>

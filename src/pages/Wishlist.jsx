@@ -5,6 +5,7 @@ import HeartBreakIcon from "../components/svg/HeartBreakIcon";
 import WishlistCard from "../components/WishListCard";
 import HeartFillIcon from "../components/svg/HeartFillIcon";
 import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function Wishlist() {
   const { wishlist, setWishlist } = useContext(WishlistContext);
@@ -26,6 +27,7 @@ export default function Wishlist() {
 
   return (
     <>
+      <ScrollToTop />
       <div className="wishlist">
         {wishlist.length > 0 ? (
           <>
