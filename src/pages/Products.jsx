@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 
 export default function Products() {
-  let [products, setProducts] = useState(data);
+  const [products, setProducts] = useState(data);
 
   function filterProducts(e) {
     let { filter } = e.target.dataset;
@@ -37,6 +37,7 @@ export default function Products() {
         break;
       case "reset":
         setProducts(data);
+        setActiveFilters([]);
         break;
       default:
         break;

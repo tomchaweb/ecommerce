@@ -1,8 +1,12 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../App";
 import data from "../data";
 import CheckoutItem from "../components/CheckoutItem";
 import Footer from "../components/Footer";
+
+import EmptyBagIcon from "../components/svg/EmptyBagIcon";
+import ChevronRightIcon from "../components/svg/ChevronRightIcon";
 
 export default function Checkout() {
   const { cart, setCart } = useContext(CartContext);
@@ -29,28 +33,56 @@ export default function Checkout() {
     return total + item.price * item.quantity;
   }, 0);
 
+  function deleteCartItem(currentId) {
+    console.log(currentId);
+    setCart((prevItems) => {
+      return prevItems.filter((item) => {
+        return item.id != currentId;
+      });
+    });
+  }
+
   return (
     <>
-      <div className="checkout">
-        <div className="checkout-items">
-          <h1>Cart</h1>
-          {cartItems.map((item) => {
-            return (
-              <CheckoutItem
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                price={item.price}
-                img={item.images[0]}
-                quantity={item.quantity}
-              />
-            );
-          })}
-          <div className="checkout-total">
-            <span>Total: {totalCheckoutPrice}</span>
+      {cart.length > 0 ? (
+        <div className="checkout">
+          <div className="checkout-items">
+            <h1>Cart</h1>
+            <div className="checkout-items-main">
+              {cartItems.map((item) => {
+                return (
+                  <CheckoutItem
+                    key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    price={item.price}
+                    img={item.images[0]}
+                    quantity={item.quantity}
+                    handleDelete={deleteCartItem}
+                  />
+                );
+              })}
+            </div>
+            <div className="checkout-total">
+              <span>Total: £{totalCheckoutPrice}.00</span>
+            </div>
+          </div>
+          <div className="checkout-payment">
+            <h1>Payment</h1>
+            <button className="checkout-btn">Checkout</button>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="empty-checkout-cart">
+          <EmptyBagIcon size={36} color={"currentColor"} />
+          <h2>Your cart is empty</h2>
+          <Link to="/products">
+            Start shopping
+            <ChevronRightIcon size={20} color={"currentColor"} />
+          </Link>
+        </div>
+      )}
+
       <Footer />
     </>
   );

@@ -1064,6 +1064,114 @@ a{
   background-color: #fff;
 }
 
+/* CHECKOUT */
+/* //////////////// */
+/* //////////////// */
+
+.checkout{
+  padding: 5rem 7rem;
+  margin-top: 7rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.checkout-items{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.checkout-item-card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  border-bottom: solid 1px #e3e3e3;
+  padding: 1rem;
+  padding-left: 0;
+}
+
+.checkout-item-card img{
+  height: 5rem;
+  width: 5rem;
+}
+
+.checkout-item-left{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkout-item-right{
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.checkout-item-right button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+}
+
+.checkout-total{
+  display: flex;
+  padding-right: 1rem;
+  justify-content: flex-end;
+}
+
+.checkout-payment {
+  background-color: #e3e3e3;
+  padding: 2rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.checkout-payment .checkout-btn {
+  border: none;
+  width: 100%;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1em;
+  background-color: #735DA5;
+  border: 2px solid #735DA5;
+  border-radius: 5rem;
+  transition: all 0.2s;
+}
+
+.checkout-payment .checkout-btn:hover {
+  background-color:#e3e3e3;
+  border: 2px solid #735DA5;
+  color: #735DA5;
+}
+
+.empty-checkout-cart {
+  font-size: 2em;
+  margin-top: 7rem;
+  padding: 5rem 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.empty-checkout-cart a{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 /* ERROR PAGES */
 /* //////////////// */
 /* //////////////// */
@@ -1104,47 +1212,6 @@ a{
 .product-not-found a:hover, .page-not-found a:hover{
   color: #735DA5;
   background-color: #fff;
-}
-
-/* CHECKOUT */
-/* //////////////// */
-/* //////////////// */
-
-.checkout{
-  padding: 5rem 7rem;
-  margin-top: 7rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-
-.checkout-items{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 5rem;
-}
-
-.checkout-item-card{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 5rem;
-}
-
-.checkout-item-card img{
-  height: 5rem;
-}
-
-.checkout-item-left{
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.checkout-item-right{
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 }
 
 /* FOOTER */

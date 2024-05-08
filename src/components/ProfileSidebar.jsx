@@ -10,7 +10,7 @@ export default function ProfileSidebar() {
     <div className="profile-sidebar">
       <div className="profile-sidebar-top">
         <UserIcon size={36} color={"currentColor"} />
-        <h1>Profile</h1>
+        <h1>User</h1>
       </div>
       <ul>
         <Link to="account">
