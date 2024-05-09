@@ -7,10 +7,13 @@ import Footer from "../components/Footer";
 
 import EmptyBagIcon from "../components/svg/EmptyBagIcon";
 import ChevronRightIcon from "../components/svg/ChevronRightIcon";
+import CreditCardIcon from "../components/svg/CreditCardIcon";
+import PaypalIcon from "../components/svg/PaypalIcon";
 
 export default function Checkout() {
   const { cart, setCart } = useContext(CartContext);
   const [cartItems, setCartItems] = useState([]);
+  const [paymentChoice, setPaymentChoice] = useState();
 
   let tempCartItems = [];
 
@@ -34,7 +37,6 @@ export default function Checkout() {
   }, 0);
 
   function deleteCartItem(currentId) {
-    console.log(currentId);
     setCart((prevItems) => {
       return prevItems.filter((item) => {
         return item.id != currentId;
@@ -42,12 +44,23 @@ export default function Checkout() {
     });
   }
 
+  function checkPaymentType(e) {
+    let { id } = e.target;
+    if (id === "card") {
+      setPaymentChoice("card");
+      console.log(paymentChoice);
+    } else if (id === "paypal") {
+      setPaymentChoice("paypal");
+      console.log(paymentChoice);
+    }
+  }
+
   return (
     <>
       {cart.length > 0 ? (
         <div className="checkout">
           <div className="checkout-items">
-            <h1>Cart</h1>
+            <h1>Shopping Cart</h1>
             <div className="checkout-items-main">
               {cartItems.map((item) => {
                 return (
@@ -68,7 +81,37 @@ export default function Checkout() {
             </div>
           </div>
           <div className="checkout-payment">
-            <h1>Payment</h1>
+            <h1>Payment Info</h1>
+            <div className="payment-radio-container">
+              <h2>Payment Method:</h2>
+              <label className="radio-container">
+                <span className="radio-container-label">
+                  <CreditCardIcon size={24} color={"currentColor"} />
+                  Credit Card
+                </span>
+                <input
+                  type="radio"
+                  onClick={checkPaymentType}
+                  name="payment-choice"
+                  id="card"
+                ></input>
+                <span className="checkmark"></span>
+              </label>
+              <label className="radio-container">
+                <span className="radio-container-label">
+                  <PaypalIcon size={24} color={"currentColor"} />
+                  Paypal
+                </span>
+                <input
+                  type="radio"
+                  onClick={checkPaymentType}
+                  name="payment-choice"
+                  id="paypal"
+                ></input>
+                <span className="checkmark"></span>
+              </label>
+              <span>{paymentChoice}</span>
+            </div>
             <button className="checkout-btn">Checkout</button>
           </div>
         </div>
