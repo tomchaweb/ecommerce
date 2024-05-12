@@ -888,6 +888,9 @@ a{
 .related-products {
   padding: 5rem 7rem;
   margin-bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .related-products h2{
@@ -1425,6 +1428,24 @@ footer {
   }
 }
 
+/* MEDIA QUERIES - CART*/
+/* //////////////// */
+/* //////////////// */
+
+@media (max-width: 1200px){
+  .cart{
+    width: 40%;
+    left: 60%;
+  }
+}
+
+@media (max-width: 800px){
+  .cart{
+    width: 100%;
+    left: 0;
+  }
+}
+
 /* MEDIA QUERIES - HOMEPAGE*/
 /* //////////////// */
 /* //////////////// */
@@ -1488,6 +1509,101 @@ footer {
 
   .product-grid span{
     grid-column: span 1;
+  }
+}
+
+/* MEDIA QUERIES - PRODUCT PAGE*/
+/* //////////////// */
+/* //////////////// */
+
+@media (max-width: 1300px){
+  .product-hero{
+    gap: 5rem;
+  }
+
+  .related-product-cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 7rem;
+    column-gap: 5rem;
+  }
+}
+
+@media (max-width: 1150px){
+  .product-hero{
+    grid-template-columns: 1fr;
+  }
+
+  .product-img-container{
+    justify-self: center;
+  }
+}
+
+@media (max-width: 750px){
+  .main-img{
+    height: 25rem;
+    width: 25rem;
+  }
+
+  .product-img-container{
+    flex-direction: column-reverse;
+  }
+
+  .thumbnails{
+    flex-direction: row;
+  }
+
+  .thumbnail-img-container {
+    height: 5.5rem;
+    width: 5.5rem;
+  }
+
+  .related-product-cards{
+    grid-template-columns: 1fr;
+  }
+
+  .section-tabs{
+    padding-left: 5rem;
+  }
+}
+
+@media (max-width: 650px){
+  .section-tabs{
+    padding-left: 3rem;
+  }
+}
+
+@media (max-width: 600px){
+  .product-hero{
+    padding: 3rem 5rem;
+  }
+
+  .section-tabs{
+    padding-left: 0;
+  }
+
+  .product-description, .additional-info, .reviews{
+    padding: 3rem 5rem;
+  }
+}
+
+@media (max-width: 500px){
+  .product-hero{
+    padding: 1rem 3rem;
+  }
+
+  .main-img {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .thumbnail-img-container {
+    width: 4.25rem;
+    height: 4.25rem;
+  }
+
+  .section-tabs button{
+    width: 33%;
   }
 }
 
