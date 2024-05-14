@@ -935,6 +935,13 @@ a{
   border-right: 1px solid #e3e3e3;
 }
 
+.profile-sidebar-top{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem
+}
+
 .profile-sidebar ul{
   display: flex;
   flex-direction: column;
@@ -1275,6 +1282,11 @@ a{
   justify-content: center;
   gap: 1rem;
   font-size: 2em;
+  text-align: center;
+}
+
+.product-not-found h2{
+  font-weight: 400;
 }
 
 .page-not-found{
@@ -1286,6 +1298,11 @@ a{
   justify-content: center;
   gap: 1rem;
   font-size: 2em;
+  text-align: center;
+}
+
+.page-not-found h2{
+  font-weight: 400;
 }
 
 .product-not-found a, .page-not-found a{
@@ -1654,6 +1671,27 @@ footer {
   }
 }
 
+/* MEDIA QUERIES - ACCOUNT*/
+/* //////////////// */
+/* //////////////// */
+
+@media (max-width: 1000px){
+  .profile{
+    padding: 3rem 5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .profile-sidebar{
+    flex-direction: row;
+    justify-content: space-between;
+    border: none
+  }
+
+  .profile-sidebar ul{
+    flex-direction: row;
+  }
+}
+
 /* MEDIA QUERIES - CHECKOUT*/
 /* //////////////// */
 /* //////////////// */
@@ -1680,5 +1718,55 @@ footer {
 @media (max-width: 650px){
   footer{
     grid-template-columns: 1fr;
+  }
+}
+
+/* MEDIA QUERIES - ERROR PAGES */
+/* //////////////// */
+/* //////////////// */
+
+@media (max-width: 650px){
+  .product-not-found{
+    padding: 3rem 5rem;
+  }
+}
+
+@media (max-width: 550px){
+  .wishlist {
+    padding: 3rem 5rem;
+  }
+  .empty-wishlist h1{
+    font-size: 2em;
+  }
+
+  .empty-wishlist a{
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2em;
+  }
+
+  .page-not-found {
+    padding: 3rem 5rem;
+  }
+
+  .page-not-found h2{
+    font-size: 1em;
+  }
+
+  .page-not-found a{
+    padding: 0.5rem 1.5rem;
+    font-size: 0.8em;
+  }
+   
+  .product-not-found h1{
+    font-size: 1.4em;
+  }
+
+  .product-not-found h2{
+    font-size: 1em;
+  }
+
+  .product-not-found a{
+    padding: 0.5rem 1.5rem;
+    font-size: 0.8em;
   }
 }
