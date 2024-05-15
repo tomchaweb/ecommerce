@@ -12,6 +12,7 @@ import HeartFillIcon from "./svg/HeartFillIcon";
 export default function Header() {
   const [cartVisiblity, setCartVisibility] = useState(false);
   const [overlayVisibility, setOverlayVisibility] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const { cart, setCart } = useContext(CartContext);
   const { wishlist, setWishlist } = useContext(WishlistContext);
@@ -24,6 +25,18 @@ export default function Header() {
     }, 0);
     setTotalCartItems(totalQuantity);
   }, [cart]);
+
+  function handleResize() {
+    if (window.innerWidth < 750) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  });
 
   function toggleCartVisibility() {
     if (cartVisiblity === false) {
@@ -42,8 +55,12 @@ export default function Header() {
           <NavLink to="/">
             <h1>Modal</h1>
           </NavLink>
-          <NavLink to="/about">About Us</NavLink>
-          <NavLink to="/products">Products</NavLink>
+          {!isMobile && (
+            <>
+              <NavLink to="/about">About Us</NavLink>
+              <NavLink to="/products">Products</NavLink>
+            </>
+          )}
         </div>
         <ul>
           <div className="cart-icon-container">

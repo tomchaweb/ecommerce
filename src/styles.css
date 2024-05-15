@@ -468,6 +468,7 @@ a{
   padding: 5rem 7rem;
   margin-top: 7rem;
   display: flex;
+  justify-content: center;
   gap: 7rem;
 }
 
@@ -1445,10 +1446,6 @@ footer {
   header{
     padding: 1rem 3rem;
   }
-
-  .header-left a:not(:first-child){
-    display: none;
-  }
 }
 
 @media (max-width: 500px){
@@ -1548,6 +1545,12 @@ footer {
   }
 }
 
+@media (max-width: 1050px){
+  .products {
+    padding: 3rem 5rem;
+  }
+}
+
 @media (max-width: 950px ){
   .product-grid {
     grid-template-columns: 1fr;
@@ -1556,6 +1559,23 @@ footer {
 
   .product-grid span{
     grid-column: span 1;
+  }
+}
+
+@media (max-width: 600px){
+  .products{
+    padding: 1rem 3rem;
+  }
+}
+
+@media (max-width: 450px){
+  .products{
+    padding: 1rem 1.5rem;
+  }
+
+  .products .product-card{
+    width: 15rem;
+    height: 15rem;
   }
 }
 
