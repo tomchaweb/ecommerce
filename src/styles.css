@@ -482,21 +482,32 @@ a{
   padding-right: 2rem;
 }
 
-.buttons h2{
+.mobile-buttons{
+  display: flex;
+  gap: 2rem;
+}
+
+.buttons h2, .mobile-buttons h2{
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
-.buttons button {
+.buttons button, .mobile-buttons button {
   text-align: left;
   border: none;
   text-transform: capitalize;
 }
 
+
 .filter-buttons {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.mobile-buttons .filter-buttons {
+  border-right: 1px solid #e3e3e3;
+  padding-right: 2rem;
 }
 
 .filter-buttons button{
@@ -1520,6 +1531,10 @@ footer {
     padding: 0;
   }
 
+  .home-hero{
+    border-radius: 0;
+  }
+
   .home-hero-text {
     font-size: 0.6em;
   }
@@ -1559,6 +1574,13 @@ footer {
 
   .product-grid span{
     grid-column: span 1;
+  }
+}
+
+@media (max-width: 750px){
+  .products{
+    flex-direction: column;
+    align-items: center;
   }
 }
 

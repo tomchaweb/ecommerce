@@ -9,7 +9,7 @@ import ScrollToTop from "../components/ScrollToTop";
 
 export default function Products() {
   const [products, setProducts] = useState(data);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   function handleResize() {
     if (window.innerWidth < 750) {
@@ -18,6 +18,14 @@ export default function Products() {
       setIsMobile(false);
     }
   }
+
+  useEffect(() => {
+    if (window.innerWidth > 750) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+    }
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -97,6 +105,45 @@ export default function Products() {
       <div className="products">
         {!isMobile && (
           <div className="buttons">
+            <div className="filter-buttons">
+              <h2>Price Range</h2>
+              <button onClick={filterProducts} data-filter="lessThan90">
+                £50 - £90
+              </button>
+              <button onClick={filterProducts} data-filter="lessThan50">
+                £30 - £50
+              </button>
+              <button onClick={filterProducts} data-filter="lessThan30">
+                £0 - £30
+              </button>
+            </div>
+            <div className="sort-buttons">
+              <h2>Sort by</h2>
+              <button onClick={sortProducts} data-sort="price">
+                price: low to high
+              </button>
+              <button onClick={sortProducts} data-sort="priceReverse">
+                price: high to low
+              </button>
+              <button onClick={sortProducts} data-sort="name">
+                name: A-Z
+              </button>
+              <button onClick={sortProducts} data-sort="rating">
+                rating
+              </button>
+            </div>
+            <button
+              className="reset-btn"
+              onClick={filterProducts}
+              data-filter="reset"
+            >
+              RESET FILTERS
+            </button>
+          </div>
+        )}
+
+        {isMobile && (
+          <div className="mobile-buttons">
             <div className="filter-buttons">
               <h2>Price Range</h2>
               <button onClick={filterProducts} data-filter="lessThan90">

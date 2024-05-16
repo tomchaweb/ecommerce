@@ -9,6 +9,7 @@ import EmptyBagIcon from "../components/svg/EmptyBagIcon";
 import ChevronRightIcon from "../components/svg/ChevronRightIcon";
 import CreditCardIcon from "../components/svg/CreditCardIcon";
 import PaypalIcon from "../components/svg/PaypalIcon";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function Checkout() {
   const { cart, setCart } = useContext(CartContext);
@@ -57,6 +58,7 @@ export default function Checkout() {
 
   return (
     <>
+      <ScrollToTop />
       {cart.length > 0 ? (
         <div className="checkout">
           <div className="checkout-items">

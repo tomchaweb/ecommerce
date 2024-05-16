@@ -8,11 +8,12 @@ import FullBagIcon from "./svg/FullBagIcon";
 import HeartIcon from "./svg/HeartIcon";
 import UserIcon from "./svg/UserIcon";
 import HeartFillIcon from "./svg/HeartFillIcon";
+import BurgerMenuIcon from "./svg/BurgerMenuIcon";
 
 export default function Header() {
   const [cartVisiblity, setCartVisibility] = useState(false);
   const [overlayVisibility, setOverlayVisibility] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   const { cart, setCart } = useContext(CartContext);
   const { wishlist, setWishlist } = useContext(WishlistContext);
@@ -27,12 +28,20 @@ export default function Header() {
   }, [cart]);
 
   function handleResize() {
+    if (window.innerWidth > 750) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+    }
+  }
+
+  useEffect(() => {
     if (window.innerWidth < 750) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
     }
-  }
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -61,6 +70,7 @@ export default function Header() {
               <NavLink to="/products">Products</NavLink>
             </>
           )}
+          {isMobile && <BurgerMenuIcon size={24} color={"currentColor"} />}
         </div>
         <ul>
           <div className="cart-icon-container">
