@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
+
 import TrashIcon from "./svg/TrashIcon";
+import CartPlusIcon from "./svg/CartPlusIcon";
 
 export default function WishlistCard({
   id,
@@ -8,6 +11,27 @@ export default function WishlistCard({
   handleDelete,
   handleAddToCart,
 }) {
+  const [isMobile, setIsMobile] = useState(true);
+
+  function handleResize() {
+    if (window.innerWidth < 750) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }
+
+  useEffect(() => {
+    if (window.innerWidth > 750) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  });
   return (
     <div className="wishlist-card">
       <div className="wishlist-card-main">
@@ -29,7 +53,11 @@ export default function WishlistCard({
           handleAddToCart(id);
         }}
       >
-        Add to cart
+        {!isMobile ? (
+          "Add to cart"
+        ) : (
+          <CartPlusIcon size={16} color={"currentColor"} />
+        )}
       </button>
     </div>
   );
