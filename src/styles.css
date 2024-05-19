@@ -1648,6 +1648,15 @@ footer {
     width: 5.5rem;
   }
 
+  .product-text-buttons{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .product-quantity{
+    justify-self: flex-start;
+  }
+
   .related-product-cards{
     grid-template-columns: 1fr;
   }

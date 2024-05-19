@@ -89,6 +89,7 @@ export default function ProductPage() {
           return [...prevItems, { id: product.id, quantity: quantity }];
         });
       }
+      setQuantity(1);
     }
   }
 
