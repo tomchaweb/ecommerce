@@ -27,6 +27,10 @@ button:hover{
   cursor: pointer;
 }
 
+a, a:link {
+  color: #1b1c1e;
+}
+
 /* HEADER */
 /* //////////////// */
 /* //////////////// */
