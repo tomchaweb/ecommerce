@@ -9,6 +9,7 @@ import HeartIcon from "./svg/HeartIcon";
 import UserIcon from "./svg/UserIcon";
 import HeartFillIcon from "./svg/HeartFillIcon";
 import BurgerMenuIcon from "./svg/BurgerMenuIcon";
+import BurgerMenu from "./BurgerMenu";
 
 export default function Header() {
   const [cartVisiblity, setCartVisibility] = useState(false);
@@ -19,6 +20,7 @@ export default function Header() {
   const { wishlist, setWishlist } = useContext(WishlistContext);
 
   const [totalCartItems, setTotalCartItems] = useState(0);
+  const [burgerActive, setBurgerActive] = useState(false);
 
   useEffect(() => {
     let totalQuantity = cart.reduce((total, item) => {
@@ -57,9 +59,14 @@ export default function Header() {
     }
   }
 
+  function toggleBurgerMenu() {
+    setBurgerActive(!burgerActive);
+  }
+
   return (
     <>
       <header>
+        {burgerActive && <BurgerMenu handleClick={toggleBurgerMenu} />}
         <div className="header-left">
           <NavLink to="/">
             <h1>Modal</h1>
@@ -70,7 +77,13 @@ export default function Header() {
               <NavLink to="/products">Products</NavLink>
             </>
           )}
-          {isMobile && <BurgerMenuIcon size={24} color={"currentColor"} />}
+          {isMobile && (
+            <BurgerMenuIcon
+              size={24}
+              color={"currentColor"}
+              handleClick={toggleBurgerMenu}
+            />
+          )}
         </div>
         <ul>
           <div className="cart-icon-container">

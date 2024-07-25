@@ -1,6 +1,9 @@
-export default function BurgerMenuIcon({ size, color }) {
+export default function BurgerMenuIcon({ size, color, handleClick }) {
   return (
     <svg
+      onClick={() => {
+        handleClick();
+      }}
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
