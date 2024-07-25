@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function BurgerMenu({ handleClick }) {
   return (
-    <div className="burger-menu slide-in-left">
+    <div className="burger-menu">
       <NavLink to="/about" onClick={handleClick}>
         About Us
       </NavLink>

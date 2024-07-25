@@ -1,8 +1,10 @@
 import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function About() {
   return (
     <>
+      <ScrollToTop />
       <div className="about-page">
         <section className="about-header">
           <h1>Get to know us</h1>

@@ -123,6 +123,7 @@ export default function ProductPage() {
 
   return (
     <>
+      <ScrollToTop />
       {idIsValid ? (
         <div className="product-page">
           <section className="product-hero">
@@ -255,7 +256,6 @@ export default function ProductPage() {
           <Link to="/products">View products</Link>
         </div>
       )}
-      <ScrollToTop />
       <Footer />
     </>
   );
