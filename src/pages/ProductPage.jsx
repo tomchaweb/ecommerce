@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import HeartIcon from "../components/svg/HeartIcon";
 import HeartFillIcon from "../components/svg/HeartFillIcon";
 import ImageModal from "../components/ImageModal";
+import CloseIcon from "../components/svg/CloseIcon";
 
 export default function ProductPage() {
   const [quantity, setQuantity] = useState(1);
