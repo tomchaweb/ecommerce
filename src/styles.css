@@ -459,10 +459,47 @@ a{
 /* //////////////// */
 /* //////////////// */
 
-.about {
+.about-page {
   padding: 5rem 7rem;
   margin-top: 7rem;
-  height: 100vh;
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.about-header h1{
+  text-transform: uppercase;
+  color: #F3F3F3;
+  letter-spacing: 0.1em;
+  background-color: #735DA5;
+  padding: 2rem;
+}
+
+.about-main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.about-us-text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.about-us-text-box h2{
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.about-us-text-box p{
+  line-height: 1.5em;
+  color: #626262;
 }
 
 /* PRODUCTS PAGE */

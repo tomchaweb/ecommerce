@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import data from "../data";
 
@@ -58,7 +58,7 @@ export default function Products() {
         break;
       case "reset":
         setProducts(data);
-        setActiveFilters([]);
+        // setActiveFilters([]);
         break;
       default:
         break;
