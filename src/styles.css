@@ -581,6 +581,10 @@ a{
   color: #95989c;
 }
 
+.active-filter {
+  font-weight: 700;
+}
+
 .sort-buttons {
   display: flex;
   flex-direction: column;
@@ -596,6 +600,10 @@ a{
 
 .sort-buttons button:hover{
   color: #95989c;
+}
+
+.active-sort {
+  font-weight: 700;
 }
 
 .reset-btn {
