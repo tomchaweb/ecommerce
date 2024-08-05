@@ -130,6 +130,7 @@ a{
 .wishlist-icon-container{
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -371,7 +372,7 @@ a{
 .hero-1 {
   background: url("../hero-furniture.jpg");
   background-size: cover;
-  background-position-y: 30%;
+  background-position-y: 50%;
 }
 
 .hero-2 {
@@ -504,13 +505,14 @@ a{
   color: #F3F3F3;
   letter-spacing: 0.1em;
   background-color: #735DA5;
-  padding: 2rem;
+  padding: 2rem 4rem;
+  margin-bottom: 4rem;
 }
 
 .about-main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .about-us-text-box {
@@ -527,7 +529,16 @@ a{
 
 .about-us-text-box p{
   line-height: 1.5em;
+  font-size: 1.2em;
   color: #626262;
+  margin-bottom: 2rem;
+}
+
+.about-img {
+  grid-column: 2;
+  grid-row: 1;
+  width: 70%;
+  justify-self: center;
 }
 
 /* PRODUCTS PAGE */
@@ -834,6 +845,7 @@ a{
   border: none;
   background-color: transparent;
   color: grey;
+  font-size: 2em;
 }
 
 
@@ -1542,8 +1554,16 @@ footer {
     /* height: 6rem; */
   }
 
+  .header-left {
+    gap: 1rem;
+  }
+
   .header-left a:first-child{
     font-size: 0.8em;
+  }
+
+  header ul{
+    gap: 1rem;
   }
 }
 
@@ -1618,6 +1638,39 @@ footer {
   }
 }
 
+/* MEDIA QUERIES - ABOUT*/
+/* //////////////// */
+/* //////////////// */
+
+@media (max-width: 1000px){
+  .about-main{
+    grid-template-columns: 1fr;
+  }
+
+  .about-img{
+    display: none;
+  }
+}
+
+@media (max-width: 800px){
+  .about-page{
+    padding: 1rem 3rem;
+  }
+
+  .about-us-text-box{
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 400px){
+  .about-page{
+    padding: 1rem 1.5rem;
+  }
+
+  .about-us-text-box {
+    padding: 0;
+  }
+}
 /* MEDIA QUERIES - PRODUCTS*/
 /* //////////////// */
 /* //////////////// */
@@ -1800,6 +1853,7 @@ footer {
 
   .section-tabs button{
     width: 33%;
+    padding: 1rem;
   }
 }
 
@@ -1923,6 +1977,27 @@ footer {
   }
 }
 
+@media (max-width: 800px){
+  .profile {
+    padding: 1rem 3rem;
+  }
+}
+
+@media (max-width: 600px){
+  .profile {
+    padding: 1rem 1.5rem;
+  }
+
+  .profile-sidebar {
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
+  .profile-sidebar ul span{
+    display: none;
+  }
+}
+
 /* MEDIA QUERIES - CHECKOUT*/
 /* //////////////// */
 /* //////////////// */
@@ -1931,6 +2006,10 @@ footer {
   .checkout{
     padding: 3rem 5rem;
     grid-template-columns: 1fr;
+  }
+
+  .checkout-payment {
+    gap: 2rem;
   }
 }
 
@@ -1965,6 +2044,25 @@ footer {
   }
 }
 
+@media (max-width: 600px){
+  .checkout-items {
+    padding: 1rem;
+  }
+
+  .checkout-item-card {
+    gap: 1rem;
+  }
+
+  .checkout-item-right {
+    gap: 1rem;
+  }
+
+  .checkout-payment {
+    align-items: center;
+    padding: 1rem;
+  }
+}
+
 
 /* MEDIA QUERIES - FOOTER */
 /* //////////////// */
@@ -1980,6 +2078,7 @@ footer {
 @media (max-width: 650px){
   footer{
     grid-template-columns: 1fr;
+    padding: 3rem 5rem;
   }
 }
 

@@ -15,15 +15,15 @@ export default function ProfileSidebar() {
       <ul>
         <Link to="account">
           <PersonIcon size={24} color={"currentColor"} />
-          My Account
+          <span>My Account</span>
         </Link>
         <Link to="orders">
           <PackageIcon size={20} color={"currentColor"} />
-          My Orders
+          <span>My Orders</span>
         </Link>
         <Link to="settings">
           <GearIcon size={20} color={"currentcolor"} />
-          My Settings
+          <span>My Settings</span>
         </Link>
       </ul>
     </div>

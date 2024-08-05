@@ -16,8 +16,8 @@ export default function Header() {
   const [overlayVisibility, setOverlayVisibility] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
 
-  const { cart, setCart } = useContext(CartContext);
-  const { wishlist, setWishlist } = useContext(WishlistContext);
+  const { cart } = useContext(CartContext);
+  const { wishlist } = useContext(WishlistContext);
 
   const [totalCartItems, setTotalCartItems] = useState(0);
   const [burgerActive, setBurgerActive] = useState(false);

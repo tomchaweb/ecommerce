@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 import HeartIcon from "../components/svg/HeartIcon";
 import HeartFillIcon from "../components/svg/HeartFillIcon";
 import ImageModal from "../components/ImageModal";
-import CloseIcon from "../components/svg/CloseIcon";
 
 export default function ProductPage() {
   const [quantity, setQuantity] = useState(1);
@@ -33,13 +32,11 @@ export default function ProductPage() {
 
   const product = data.find((entry) => entry.id === Number(id));
 
-  if (idIsValid) {
-    useEffect(() => {
-      if (wishlist.find((item) => item.id === product.id)) {
-        setLiked(true);
-      }
-    }, []);
-  }
+  useEffect(() => {
+    if (idIsValid && wishlist.find((item) => item.id === product.id)) {
+      setLiked(true);
+    }
+  }, []);
 
   const relatedProducts = data.filter((item) => {
     return item.id <= 4;

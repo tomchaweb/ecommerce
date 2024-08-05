@@ -25,27 +25,13 @@ export default function Home() {
     },
     {
       h1: "Premium Comfort",
-      h2: "Some text",
+      h2: "Hand-crafted Materials",
     },
     {
       h1: "Expertly Designed",
-      h2: "Some text",
+      h2: "30 Years of experience",
     },
   ];
-
-  // function changeHero() {
-  //   let heroTimer = setTimeout(function () {
-  //     let currentSlide = activeHero;
-  //     if (currentSlide < heroSlides.length - 1) {
-  //       let newHero = activeHero + 1;
-  //       setActiveHero(newHero);
-  //     } else {
-  //       setActiveHero(0);
-  //     }
-  //   }, 5000);
-  // }
-
-  // changeHero();
 
   function handleDotClick(e) {
     let { id } = e.target;

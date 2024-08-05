@@ -18,10 +18,6 @@ export default function About() {
               et magnis dis parturient montes nascetur ridiculus mus. Vestibulum
               ultricies aliquam convallis.
             </p>
-          </div>
-          <img></img>
-          <img></img>
-          <div className="about-us-text-box">
             <h2>Our Vision</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut
@@ -29,12 +25,19 @@ export default function About() {
               et magnis dis parturient montes nascetur ridiculus mus. Vestibulum
               ultricies aliquam convallis.
             </p>
+            <h2>Our Goals</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut
+              ullamcorper leo, eget euismod orci. Cum sociis natoque penatibus
+              et magnis dis parturient montes nascetur ridiculus mus. Vestibulum
+              ultricies aliquam convallis.
+            </p>
           </div>
-        </section>
-        <section className="about-key-points">
-          <div className="about-key-points-card"></div>
-          <div className="about-key-points-card"></div>
-          <div className="about-key-points-card"></div>
+          <img
+            className="about-img"
+            src="./woman.jpg"
+            alt="woman looking at wall decorations"
+          ></img>
         </section>
       </div>
       <Footer />

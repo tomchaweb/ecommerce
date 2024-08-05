@@ -49,10 +49,8 @@ export default function Checkout() {
     let { id } = e.target;
     if (id === "card") {
       setPaymentChoice("card");
-      console.log(paymentChoice);
     } else if (id === "paypal") {
       setPaymentChoice("paypal");
-      console.log(paymentChoice);
     }
   }
 
@@ -112,7 +110,6 @@ export default function Checkout() {
                 ></input>
                 <span className="checkmark"></span>
               </label>
-              <span>{paymentChoice}</span>
             </div>
             <button className="checkout-btn">Checkout</button>
           </div>
